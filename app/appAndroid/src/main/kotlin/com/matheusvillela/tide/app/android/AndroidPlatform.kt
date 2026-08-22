@@ -1,0 +1,8 @@
+package com.matheusvillela.tide.app.android
+
+import android.os.Build
+import com.matheusvillela.tide.app.shared.di.Platform
+
+class AndroidPlatform : Platform {
+    override fun invoke() = "Android ${Build.VERSION.SDK_INT}"
+}
