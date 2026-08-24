@@ -17,6 +17,8 @@ kotlin {
         browser()
     }
 
+    jvm()
+
     android {
         namespace = "com.matheusvillela.util.app.shared.data"
         compileSdk = libs.versions.android.compileSdk.get().toInt()

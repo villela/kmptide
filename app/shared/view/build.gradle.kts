@@ -18,6 +18,8 @@ kotlin {
     wasmJs {
         browser()
     }
+
+    jvm()
     
     android {
        namespace = "com.matheusvillela.util.app.shared.view"

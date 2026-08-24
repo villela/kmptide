@@ -28,8 +28,13 @@ dependencyResolutionManagement {
     }
 }
 
+plugins {
+    id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
+}
+
 include(":app:appAndroid")
 include(":app:appWeb")
+include(":app:appDesktopWindowsJvm")
 include(":app:shared:view")
 include(":app:shared:presentation")
 include(":app:shared:presentation-deps")
