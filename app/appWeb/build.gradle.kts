@@ -21,7 +21,9 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
-            implementation(projects.app.shared)
+            implementation(projects.app.shared.view)
+            implementation(projects.app.shared.presentation) // needed for metro
+            implementation(projects.app.shared.presentationDeps)
 
             implementation(libs.compose.ui)
             implementation(libs.metrox.viewmodel.compose)

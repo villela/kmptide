@@ -30,7 +30,10 @@ dependencyResolutionManagement {
 
 include(":app:appAndroid")
 include(":app:appWeb")
-include(":app:shared")
+include(":app:shared:view")
+include(":app:shared:presentation")
+include(":app:shared:presentation-deps")
+include(":app:shared:data")
 include(":core:dto")
 include(":core:coroutine-util")
 include(":server")

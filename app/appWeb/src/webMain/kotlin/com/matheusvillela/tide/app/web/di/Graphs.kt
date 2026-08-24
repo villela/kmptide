@@ -1,6 +1,6 @@
 package com.matheusvillela.tide.app.web.di
 
-import com.matheusvillela.tide.app.shared.di.Platform
+import com.matheusvillela.tide.app.shared.presentation.deps.Platform
 import com.matheusvillela.tide.app.web.WebPlatform
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.DependencyGraph

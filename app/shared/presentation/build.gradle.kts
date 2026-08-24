@@ -4,11 +4,10 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidMultiplatformLibrary)
+    alias(libs.plugins.metro)
 }
 
 kotlin {
-    jvm()
-    
     js {
         browser()
     }
@@ -19,7 +18,7 @@ kotlin {
     }
     
     androidLibrary {
-       namespace = "com.matheusvillela.tide.core.coroutine.util"
+       namespace = "com.matheusvillela.util.app.shared.presentation"
        compileSdk = libs.versions.android.compileSdk.get().toInt()
        minSdk = libs.versions.android.minSdk.get().toInt()
     
@@ -36,7 +35,12 @@ kotlin {
     
     sourceSets {
         commonMain.dependencies {
-            implementation(libs.kotlinx.coroutines.core)
+            implementation(projects.app.shared.presentationDeps)
+            implementation(projects.app.shared.data)
+            implementation(projects.core.coroutineUtil)
+            implementation(libs.metrox.viewmodel.compose)
+            implementation(libs.androidx.lifecycle.viewmodelCompose)
+            implementation(libs.androidx.lifecycle.runtimeCompose)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

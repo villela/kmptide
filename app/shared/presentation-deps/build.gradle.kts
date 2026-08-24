@@ -7,8 +7,6 @@ plugins {
 }
 
 kotlin {
-    jvm()
-    
     js {
         browser()
     }
@@ -19,7 +17,7 @@ kotlin {
     }
     
     androidLibrary {
-       namespace = "com.matheusvillela.tide.core.coroutine.util"
+       namespace = "com.matheusvillela.util.app.shared.presentation.deps"
        compileSdk = libs.versions.android.compileSdk.get().toInt()
        minSdk = libs.versions.android.minSdk.get().toInt()
     
@@ -36,10 +34,10 @@ kotlin {
     
     sourceSets {
         commonMain.dependencies {
-            implementation(libs.kotlinx.coroutines.core)
+            //
         }
         commonTest.dependencies {
-            implementation(libs.kotlin.test)
+            //
         }
     }
 }
