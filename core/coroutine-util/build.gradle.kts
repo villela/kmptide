@@ -18,7 +18,7 @@ kotlin {
         browser()
     }
     
-    androidLibrary {
+    android {
        namespace = "com.matheusvillela.tide.core.coroutine.util"
        compileSdk = libs.versions.android.compileSdk.get().toInt()
        minSdk = libs.versions.android.minSdk.get().toInt()
