@@ -38,14 +38,19 @@ internal fun MainScreen(viewModel: MainViewModel = metroViewModel()) {
             .fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        val count by viewModel.state.collectAsState()
+        val state by viewModel.state.collectAsState()
         Button(onClick = { showContent = !showContent }) {
             Text("Click me!")
         }
         AnimatedVisibility(showContent) {
-            Image(painterResource(Res.drawable.compose_multiplatform), null)
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Image(painterResource(Res.drawable.compose_multiplatform), null)
+                Text(modifier = Modifier.padding(20.dp), text = "Platform: ${state.platform}")
+            }
         }
-        Text(modifier = Modifier.padding(20.dp), text = "Count: $count")
+        Text(modifier = Modifier.padding(20.dp), text = "Count: ${state.count}")
         Row(
             modifier = Modifier.padding(20.dp),
             horizontalArrangement = Arrangement.spacedBy(20.dp)

@@ -2,6 +2,7 @@ package com.matheusvillela.tide.app.shared.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
 import com.matheusvillela.tide.app.shared.presentation.deps.Platform
+import com.matheusvillela.tide.app.shared.presentation.state.MainViewModelState
 import com.matheusvillela.tide.core.coroutine.util.mapState
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesIntoMap
@@ -17,10 +18,11 @@ class MainViewModel(private val platform: Platform) : ViewModel() {
     private val count = MutableStateFlow(0)
 
     val state = count.mapState { value ->
-        "$platformValue -> $value"
+        MainViewModelState(
+            count = value,
+            platform = platformValue,
+        )
     }
-//    val count: StateFlow<Int>
-//        field: MutableStateFlow<Int> = MutableStateFlow(0)
 
     fun increment() {
         count.value++
